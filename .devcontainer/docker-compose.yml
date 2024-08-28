@@ -7,6 +7,7 @@ services:
       dockerfile: Dockerfile
     volumes:
       - ../..:/workspaces:cached
+      - node_modules:/workspace/node_modules
 
     # Overrides default command so things don't shut down after the process ends.
     command: sleep infinity
@@ -34,3 +35,4 @@ services:
 
 volumes:
   mongodb-data:
+  node_modules:

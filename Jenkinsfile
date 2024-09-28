@@ -6,9 +6,9 @@ pipeline {
     stages {
         stage('Pipeline') {
             parallel {
-                stage('Main') {
+                stage('Master') {
                     when {
-                        branch 'main'
+                        branch 'master'
                     }
                     agent any
                     steps {
@@ -22,7 +22,7 @@ pipeline {
                 }
                 stage('PR') {
                     when {
-                        not { branch 'main' }
+                        not { branch 'master' }
                     }
                     agent any
                     steps {
